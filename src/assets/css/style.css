@@ -1,0 +1,13 @@
+html,body,address,blockquote,div,dl,form,h1,h2,h3,h4,h5,h6,ol,p,pre,table,ul,dd,dl,dt,li,tbody,td,tfoot,th,thead,tr,button,del,ins,map,object,a,abbr,acronym,b,big,br,cite,code,dfn,em,i,img,kbd,q,samp,small,span,strong,sub,sup,tt,var,legend,fieldset{margin:0px;padding:0px;font-family:"\5FAE\8F6F\96C5\9ED1", SimSun;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+body{font-family:"\5FAE\8F6F\96C5\9ED1", SimSun;background-color:#ffffff;}
+/*定义清除浮动样式 方法一*/
+.clearfix:after{content:'\20';display:block;height:0;clear:both; visibility:hidden;}
+.clearfix{zoom:1;}
+ul, li {list-style-type:none;}
+.row{padding:5px 0;font-weight:none !important;font-size:16px;}
+.media{display: block;width:120px;height:120px;float:left;position:relative;border:1px solid #ddd;border-radius: 5px;}
+.media-img{display: block;width:100px;height:auto;position:relative;z-index:0;margin:10px auto;}
+.media-right{margin-left:130px;padding:0 15px}
+.btn{display: inline;text-decoration: none;background-color: #61b57d;color:#fff;padding:5px 10px;border-radius: 5px;margin-right:5px;cursor: pointer;font-size:12px;}
+.operation{padding:5px 0;}
