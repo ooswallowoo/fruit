@@ -4,9 +4,10 @@
         <a @click="addApple" class="btn add-btn" href="javascript:void(0)">添加苹果</a>
         <a @click="addBanana" class="btn add-btn" href="javascript:void(0)">添加香蕉</a>
         <a @click="addPear" class="btn add-btn" href="javascript:void(0)">添加梨</a>
+        <p class="total">列表长度：{{list.length}}</p>
       </div>
-      <p class="total">列表长度：{{list.length}}</p>
-      <ul id="fruit">
+      
+      <ul id="fruit" v-if="list.length > 0">
         <li v-for="fruit in list" class="fruit-item clearfix">
             <div v-if="fruit.type === 1">
                 <apple v-bind:fruitData='fruit' v-on:addPearFromChild='addPearFromChild'></apple>
@@ -45,7 +46,7 @@ export default {
     console.log(this.list)
   },
   watch: {
-    /* 在页面dom不可见时读取数据并赋值给本页面list */
+    /* 监听list */
   },
   methods: {
     /* 添加苹果函数' */
@@ -60,7 +61,7 @@ export default {
     addPear: function () {
       this.addFruit({type: 3, name: '雪花梨'})
     },
-    /* 添加梨函数' */
+    /* 添加水果函数' */
     addFruit: function (data) {
       let fruit = {
         type: data.type,
@@ -88,7 +89,7 @@ export default {
 <style scoped>
 #fruit{
   font-weight: normal;
-  margin:20px;
+  margin:30px 20px 20px;
 }
 #fruit li{
     display: block;
@@ -96,8 +97,8 @@ export default {
     border-top:1px dotted #ddd;
     padding:15px 0;
 }
-.header{position:relative;background-color:#fff;text-align:right;position:fixed;top:0;width:100%;left:0px;z-index:100;border-bottom:1px solid #ddd;}
+.header{position:relative;background-color:#fff;text-align:right;position:fixed;top:0;width:100%;left:0px;z-index:100;border-bottom:1px solid #ddd;height:50px;line-height:50px;}
 .add-btn{background: url(../../assets/images/add-btn.png) no-repeat 7px center #e9e9e9;height:15px;padding-left:21px;font-size:12px;border:1px solid #d0d0d0;color:#333;border-radius:20px;}
-.total{text-align:right;padding:0 15px;}
+.total{text-align:right;padding:0 15px;position:absolute;top:0px;left:15px;z-index:999;}
 
 </style>
